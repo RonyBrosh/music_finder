@@ -21,4 +21,8 @@ class _DiContainer {
   Future<void> init(List<DIInitializer> initializers) async {
     initializers.forEach((initializer) => initializer());
   }
+
+  Future<void> reset() async {
+    await _getIt.reset();
+  }
 }
