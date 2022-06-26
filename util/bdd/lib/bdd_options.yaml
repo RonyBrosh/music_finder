@@ -1,0 +1,4 @@
+include: package:bdd_widget_test/bdd_options.yaml
+externalSteps:
+  - package:bdd/src/steps/the_be_is_mocked_with_scenario.dart
+  - package:bdd/src/steps/i_see_alert.dart

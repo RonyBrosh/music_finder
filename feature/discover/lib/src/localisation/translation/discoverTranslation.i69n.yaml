@@ -1,0 +1,5 @@
+genre_picker:
+  title: 'Choose a Genre'
+  error:
+    title: 'Failed to load genres...'
+    content: 'Swipe down to refresh the page'

@@ -1,0 +1,36 @@
+name: discover
+description: A new Flutter package project.
+publish_to: 'none'
+version: 0.0.1
+
+environment:
+  sdk: ">=2.17.1 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  design_system:
+    path: ../../util/design_system
+  i69n: ^2.1.0
+  freezed_annotation: ^2.0.3
+  flutter_bloc: ^8.0.1
+  freezed: ^2.0.3+1
+  json_annotation: ^4.5.0
+  core:
+    path: ../../util/core
+  injectable: ^1.5.3
+  retrofit: ^3.0.1+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  linter:
+    path: ../../util/linter
+  build_runner: ^2.1.11
+  bdd_widget_test: ^1.4.2
+  bdd:
+    path: ../../util/bdd
+  json_serializable: ^6.2.0
+  injectable_generator: ^1.5.3
+  retrofit_generator: ^4.0.1
