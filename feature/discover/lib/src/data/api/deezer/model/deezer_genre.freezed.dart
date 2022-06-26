@@ -21,7 +21,7 @@ DeezerGenre _$DeezerGenreFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$DeezerGenre {
   String get picture_medium => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,7 +35,7 @@ abstract class $DeezerGenreCopyWith<$Res> {
   factory $DeezerGenreCopyWith(
           DeezerGenre value, $Res Function(DeezerGenre) then) =
       _$DeezerGenreCopyWithImpl<$Res>;
-  $Res call({String picture_medium, String id, String name});
+  $Res call({String picture_medium, int id, String name});
 }
 
 /// @nodoc
@@ -60,7 +60,7 @@ class _$DeezerGenreCopyWithImpl<$Res> implements $DeezerGenreCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -76,7 +76,7 @@ abstract class _$$_DeezerGenreCopyWith<$Res>
           _$_DeezerGenre value, $Res Function(_$_DeezerGenre) then) =
       __$$_DeezerGenreCopyWithImpl<$Res>;
   @override
-  $Res call({String picture_medium, String id, String name});
+  $Res call({String picture_medium, int id, String name});
 }
 
 /// @nodoc
@@ -103,7 +103,7 @@ class __$$_DeezerGenreCopyWithImpl<$Res> extends _$DeezerGenreCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -125,7 +125,7 @@ class _$_DeezerGenre extends _DeezerGenre {
   @override
   final String picture_medium;
   @override
-  final String id;
+  final int id;
   @override
   final String name;
 
@@ -167,7 +167,7 @@ class _$_DeezerGenre extends _DeezerGenre {
 abstract class _DeezerGenre extends DeezerGenre {
   const factory _DeezerGenre(
       {required final String picture_medium,
-      required final String id,
+      required final int id,
       required final String name}) = _$_DeezerGenre;
   const _DeezerGenre._() : super._();
 
@@ -177,7 +177,7 @@ abstract class _DeezerGenre extends DeezerGenre {
   @override
   String get picture_medium => throw _privateConstructorUsedError;
   @override
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override

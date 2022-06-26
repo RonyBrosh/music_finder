@@ -13,8 +13,7 @@ class PlatformAppBar extends PlatformWidget<CupertinoNavigationBar, AppBar> {
 
   @override
   CupertinoNavigationBar createCupertinoWidget(BuildContext context) {
-    // TODO: implement createCupertinoWidget
-    throw UnimplementedError();
+    return CupertinoNavigationBar(middle: AppBarTitle(text: title));
   }
 
   @override

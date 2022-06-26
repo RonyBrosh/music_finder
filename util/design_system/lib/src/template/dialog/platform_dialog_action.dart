@@ -13,8 +13,10 @@ class PlatformDialogAction extends PlatformWidget<CupertinoDialogAction, TextBut
 
   @override
   CupertinoDialogAction createCupertinoWidget(BuildContext context) {
-    // TODO: implement createCupertinoWidget
-    throw UnimplementedError();
+    return CupertinoDialogAction(
+      onPressed: onPressed,
+      child: Text(text),
+    );
   }
 
   @override

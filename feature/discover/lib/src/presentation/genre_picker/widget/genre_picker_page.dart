@@ -3,6 +3,7 @@ import 'package:discover/src/domain/model/genre.dart';
 import 'package:discover/src/domain/use_case/get_genres_use_case.dart';
 import 'package:discover/src/localisation/build_context_extension.dart';
 import 'package:discover/src/presentation/genre_picker/widget/genre_card.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:design_system/design_system.dart';
 

@@ -9,6 +9,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  discover:
+    path: feature/discover
+  core:
+    path: util/core
+  design_system:
+    path: util/design_system
 
 dev_dependencies:
   flutter_test:

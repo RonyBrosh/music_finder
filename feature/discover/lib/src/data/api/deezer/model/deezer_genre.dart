@@ -11,7 +11,7 @@ class DeezerGenre with _$DeezerGenre {
 
   const factory DeezerGenre({
     required String picture_medium,
-    required String id,
+    required int id,
     required String name,
   }) = _DeezerGenre;
 
@@ -20,7 +20,7 @@ class DeezerGenre with _$DeezerGenre {
   Genre toGenre() {
     return Genre(
       image: picture_medium,
-      id: id,
+      id: id.toString(),
       name: name,
     );
   }

@@ -22,8 +22,27 @@ class PlatformDialog extends PlatformWidget<CupertinoAlertDialog, AlertDialog> {
 
   @override
   CupertinoAlertDialog createCupertinoWidget(BuildContext context) {
-    // TODO: implement createCupertinoWidget
-    throw UnimplementedError();
+    return CupertinoAlertDialog(
+      title: Text(title),
+      content: Text(content),
+      actions: [
+        if (secondaryButtonText != null)
+          PlatformDialogAction(
+            text: secondaryButtonText!,
+            onPressed: () {
+              _close(context);
+              onSecondaryButtonPressed?.call();
+            },
+          ),
+        PlatformDialogAction(
+          text: mainButtonText,
+          onPressed: () {
+            _close(context);
+            onMainButtonPressed?.call();
+          },
+        ),
+      ],
+    );
   }
 
   @override

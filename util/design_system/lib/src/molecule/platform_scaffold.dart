@@ -14,8 +14,10 @@ class PlatformScaffold extends PlatformWidget<Widget, Scaffold> {
 
   @override
   Widget createCupertinoWidget(BuildContext context) {
-    // TODO: implement createCupertinoWidget
-    throw UnimplementedError();
+    return Scaffold(
+      appBar: appBar?.createCupertinoWidget(context),
+      body: body,
+    );
   }
 
   @override

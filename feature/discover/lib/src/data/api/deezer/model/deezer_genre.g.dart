@@ -9,7 +9,7 @@ part of 'deezer_genre.dart';
 _$_DeezerGenre _$$_DeezerGenreFromJson(Map<String, dynamic> json) =>
     _$_DeezerGenre(
       picture_medium: json['picture_medium'] as String,
-      id: json['id'] as String,
+      id: json['id'] as int,
       name: json['name'] as String,
     );
 

@@ -1,7 +1,7 @@
 Feature: Genre picker
 
   After:
-    Then reset test
+  Then reset test
 
   Scenario: Fetch genres fails
     Given the page is shown and fetch genres endpoint fails
