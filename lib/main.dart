@@ -2,6 +2,7 @@ import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:discover/discover.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 main() async {
   await diContainer.init(
@@ -21,8 +22,8 @@ class MusicFinderApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PlatformApp(
-      home: const GenrePickerPage(),
-      isShowDebugBanner: true,
+      routerDelegate: diContainer<DiscoveryRouter>().delegate(),
+      routeInformationParser: diContainer<DiscoveryRouter>().defaultRouteParser(),
     );
   }
 }

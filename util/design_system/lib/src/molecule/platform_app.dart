@@ -1,30 +1,35 @@
 import 'package:design_system/src/app_theme.dart';
 import 'package:design_system/src/molecule/platform_widget.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class PlatformApp extends PlatformWidget<CupertinoApp, MaterialApp> {
   const PlatformApp({
-    required this.home,
-    this.isShowDebugBanner = false,
+    required this.routerDelegate,
+    required this.routeInformationParser,
   });
 
-  final bool isShowDebugBanner;
-  final Widget home;
+  final RouterDelegate<Object> routerDelegate;
+  final RouteInformationParser<Object> routeInformationParser;
 
   @override
   CupertinoApp createCupertinoWidget(BuildContext context) {
-    return CupertinoApp(
+    return CupertinoApp.router(
+      debugShowCheckedModeBanner: kDebugMode,
       theme: cupertinoTheme,
-      home: home,
+      routerDelegate: routerDelegate,
+      routeInformationParser: routeInformationParser,
     );
   }
 
   @override
   MaterialApp createMaterialWidget(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: kDebugMode,
       theme: materialTheme,
-      home: home,
+      routerDelegate: routerDelegate,
+      routeInformationParser: routeInformationParser,
     );
   }
 }

@@ -10,10 +10,10 @@ abstract class PlatformWidget<Cupertino extends Widget, Material extends Widget>
   @override
   Widget build(BuildContext context) {
     final platform = Theme.of(context).platform;
-    if (platform == TargetPlatform.android) {
-      return createMaterialWidget(context);
-    } else {
+    if (platform == TargetPlatform.iOS) {
       return createCupertinoWidget(context);
+    } else {
+      return createMaterialWidget(context);
     }
   }
 }

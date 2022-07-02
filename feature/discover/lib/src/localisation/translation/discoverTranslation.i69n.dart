@@ -37,6 +37,8 @@ class DiscoverTranslation implements i69n.I69nMessageBundle {
   const DiscoverTranslation();
   Genre_pickerDiscoverTranslation get genre_picker =>
       Genre_pickerDiscoverTranslation(this);
+  Event_pickerDiscoverTranslation get event_picker =>
+      Event_pickerDiscoverTranslation(this);
   Object operator [](String key) {
     var index = key.indexOf('.');
     if (index > 0) {
@@ -46,6 +48,8 @@ class DiscoverTranslation implements i69n.I69nMessageBundle {
     switch (key) {
       case 'genre_picker':
         return genre_picker;
+      case 'event_picker':
+        return event_picker;
       default:
         return key;
     }
@@ -91,6 +95,25 @@ class ErrorGenre_pickerDiscoverTranslation implements i69n.I69nMessageBundle {
         return title;
       case 'content':
         return content;
+      default:
+        return key;
+    }
+  }
+}
+
+class Event_pickerDiscoverTranslation implements i69n.I69nMessageBundle {
+  final DiscoverTranslation _parent;
+  const Event_pickerDiscoverTranslation(this._parent);
+  String title(String genre) => "Pick $genre event";
+  Object operator [](String key) {
+    var index = key.indexOf('.');
+    if (index > 0) {
+      return (this[key.substring(0, index)]
+          as i69n.I69nMessageBundle)[key.substring(index + 1)];
+    }
+    switch (key) {
+      case 'title ':
+        return title;
       default:
         return key;
     }

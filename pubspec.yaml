@@ -15,6 +15,7 @@ dependencies:
     path: util/core
   design_system:
     path: util/design_system
+  auto_route: ^4.2.0
 
 dev_dependencies:
   flutter_test:

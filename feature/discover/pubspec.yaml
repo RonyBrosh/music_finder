@@ -21,8 +21,11 @@ dependencies:
     path: ../../util/core
   injectable: ^1.5.3
   retrofit: ^3.0.1+1
+  auto_route: ^4.2.0
+  flow_builder: ^0.0.9
 
 dev_dependencies:
+  auto_route_generator: ^4.2.0
   flutter_test:
     sdk: flutter
   linter:

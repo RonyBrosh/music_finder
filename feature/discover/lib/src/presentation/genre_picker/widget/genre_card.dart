@@ -6,20 +6,25 @@ class GenreCard extends StatelessWidget {
   const GenreCard({
     Key? key,
     required this.genre,
+    required this.onTap,
   }) : super(key: key);
 
   final Genre genre;
+  final void Function(Genre) onTap;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Stack(
-        children: [
-          Align(
-            child: TextCaption(text: genre.name),
-            alignment: Alignment.bottomLeft,
-          )
-        ],
+      child: InkWell(
+        onTap: () => onTap(genre),
+        child: Stack(
+          children: [
+            Align(
+              child: TextCaption(text: genre.name),
+              alignment: Alignment.bottomLeft,
+            )
+          ],
+        ),
       ),
     );
   }
