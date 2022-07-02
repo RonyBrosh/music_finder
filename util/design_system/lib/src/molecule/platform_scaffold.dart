@@ -1,5 +1,6 @@
 import 'package:design_system/src/molecule/platform_app_bar.dart';
 import 'package:design_system/src/molecule/platform_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PlatformScaffold extends PlatformWidget<Widget, Scaffold> {
@@ -14,9 +15,9 @@ class PlatformScaffold extends PlatformWidget<Widget, Scaffold> {
 
   @override
   Widget createCupertinoWidget(BuildContext context) {
-    return Scaffold(
-      appBar: appBar?.createCupertinoWidget(context),
-      body: body,
+    return CupertinoPageScaffold(
+      navigationBar: appBar?.createCupertinoWidget(context),
+      child: body,
     );
   }
 

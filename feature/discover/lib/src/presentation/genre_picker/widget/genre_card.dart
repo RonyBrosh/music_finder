@@ -1,5 +1,6 @@
+import 'package:design_system/design_system.dart';
 import 'package:discover/src/domain/model/genre.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class GenreCard extends StatelessWidget {
   const GenreCard({
@@ -11,6 +12,15 @@ class GenreCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(genre.name);
+    return Card(
+      child: Stack(
+        children: [
+          Align(
+            child: TextCaption(text: genre.name),
+            alignment: Alignment.bottomLeft,
+          )
+        ],
+      ),
+    );
   }
 }

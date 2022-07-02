@@ -20,10 +20,9 @@ class MusicFinderApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: true,
-      title: 'Music Finder',
+    return PlatformApp(
       home: const GenrePickerPage(),
+      isShowDebugBanner: true,
     );
   }
 }

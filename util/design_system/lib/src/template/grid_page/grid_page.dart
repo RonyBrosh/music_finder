@@ -1,4 +1,7 @@
 import 'package:core/core.dart';
+import 'package:design_system/src/atom/dimens.dart';
+import 'package:design_system/src/molecule/platform_app_bar.dart';
+import 'package:design_system/src/molecule/platform_scaffold.dart';
 import 'package:design_system/src/template/grid_page/bloc/grid_page_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -26,26 +29,30 @@ class GridPage<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => diContainer<GridPageBloc>(parameter: onLoad),
-      child: BlocConsumer<GridPageBloc, GridPageState>(
-        listener: (context, state) {
-          state.whenOrNull(
-            error: onError,
-          );
-        },
-        builder: (context, state) {
-          return state.maybeWhen(
-            success: (data) => GridView.builder(
-              itemCount: data.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: crossAxisCount),
-              itemBuilder: (context, index) {
-                return onBuildItem(data[index]);
-              },
-            ),
-            orElse: () => Center(
-              child: Text('Loading'),
-            ),
-          );
-        },
+      child: PlatformScaffold(
+        appBar: title != null ? PlatformAppBar(title: title!) : null,
+        body: BlocConsumer<GridPageBloc, GridPageState>(
+          listener: (context, state) {
+            state.whenOrNull(
+              error: onError,
+            );
+          },
+          builder: (context, state) {
+            return state.maybeWhen(
+              success: (data) => GridView.builder(
+                padding: EdgeInsets.all(Space.small),
+                itemCount: data.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: crossAxisCount),
+                itemBuilder: (context, index) {
+                  return onBuildItem(data[index]);
+                },
+              ),
+              orElse: () => Center(
+                child: Text('Loading'),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

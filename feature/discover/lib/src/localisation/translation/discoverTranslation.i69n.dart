@@ -55,7 +55,7 @@ class DiscoverTranslation implements i69n.I69nMessageBundle {
 class Genre_pickerDiscoverTranslation implements i69n.I69nMessageBundle {
   final DiscoverTranslation _parent;
   const Genre_pickerDiscoverTranslation(this._parent);
-  String get title => "Choose a Genre";
+  String get title => "Pick a Genre";
   ErrorGenre_pickerDiscoverTranslation get error =>
       ErrorGenre_pickerDiscoverTranslation(this);
   Object operator [](String key) {
