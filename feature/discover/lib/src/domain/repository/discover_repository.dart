@@ -1,16 +1,16 @@
 import 'package:core/core.dart';
-import 'package:discover/src/data/api/deezer/deezer_api.dart';
+import 'package:discover/src/data/api/ticket_master/ticket_master_api.dart';
 import 'package:discover/src/domain/model/genre.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
 class DiscoverRepository {
-  const DiscoverRepository(this._deezerApi);
+  const DiscoverRepository(this._ticketMasterApi);
 
-  final DeezerApi _deezerApi;
+  final TicketMasterApi _ticketMasterApi;
 
   Future<ResultState<List<Genre>>> loadGenres() async {
-    final result = await ResultState.fromAsync(_deezerApi.fetchGenres);
-    return result.map((deezerGenres) => deezerGenres.toGenres());
+    final result = await ResultState.fromAsync(_ticketMasterApi.getGenres);
+    return result.map((data) => data.toGenres());
   }
 }

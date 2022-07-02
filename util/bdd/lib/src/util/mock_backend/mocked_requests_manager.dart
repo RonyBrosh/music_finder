@@ -12,6 +12,12 @@ class MockedRequestsManager {
   }
 
   MockedRequestHandler? getRequestHandler(RequestOptions requestOptions) {
-    return _currentScenario?.handlers.firstWhereOrNull((handler) => handler.path == requestOptions.path);
+    var queryParameters = '';
+    requestOptions.queryParameters.forEach((key, value) {
+      queryParameters += '$key=$value';
+    });
+    return _currentScenario?.handlers.firstWhereOrNull(
+      (handler) => handler.path == '${requestOptions.path}?$queryParameters',
+    );
   }
 }

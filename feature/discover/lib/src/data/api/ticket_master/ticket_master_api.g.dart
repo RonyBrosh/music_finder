@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'deezer_api.dart';
+part of 'ticket_master_api.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,26 +8,27 @@ part of 'deezer_api.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps
 
-class _DeezerApi implements DeezerApi {
-  _DeezerApi(this._dio, {this.baseUrl});
+class _TicketMasterApi implements TicketMasterApi {
+  _TicketMasterApi(this._dio, {this.baseUrl});
 
   final Dio _dio;
 
   String? baseUrl;
 
   @override
-  Future<DeezerGenresResponse> fetchGenres() async {
+  Future<TicketMasterGenresResponse> getGenres() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<DeezerGenresResponse>(
+        _setStreamType<TicketMasterGenresResponse>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/genre',
+                .compose(_dio.options,
+                    '/discovery/v2/classifications/KZFzniwnSyZfZ7v7nJ',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = DeezerGenresResponse.fromJson(_result.data!);
+    final value = TicketMasterGenresResponse.fromJson(_result.data!);
     return value;
   }
 

@@ -5,7 +5,6 @@ part 'genre.freezed.dart';
 @freezed
 class Genre with _$Genre {
   const factory Genre({
-    required String image,
     required String id,
     required String name,
   }) = _Genre;
