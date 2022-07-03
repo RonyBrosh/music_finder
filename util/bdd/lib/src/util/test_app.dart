@@ -9,6 +9,7 @@ Future<void> runTestApp({
   required List<DIInitializer> dIInitializers,
   void Function()? postDI,
 }) async {
+  await diContainer.reset();
   await diContainer.init(
     [
       CoreDIInitializer(),
