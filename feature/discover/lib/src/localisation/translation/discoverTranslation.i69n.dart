@@ -105,6 +105,8 @@ class Event_pickerDiscoverTranslation implements i69n.I69nMessageBundle {
   final DiscoverTranslation _parent;
   const Event_pickerDiscoverTranslation(this._parent);
   String title(String genre) => "$genre events";
+  ErrorEvent_pickerDiscoverTranslation get error =>
+      ErrorEvent_pickerDiscoverTranslation(this);
   Object operator [](String key) {
     var index = key.indexOf('.');
     if (index > 0) {
@@ -114,6 +116,30 @@ class Event_pickerDiscoverTranslation implements i69n.I69nMessageBundle {
     switch (key) {
       case 'title ':
         return title;
+      case 'error':
+        return error;
+      default:
+        return key;
+    }
+  }
+}
+
+class ErrorEvent_pickerDiscoverTranslation implements i69n.I69nMessageBundle {
+  final Event_pickerDiscoverTranslation _parent;
+  const ErrorEvent_pickerDiscoverTranslation(this._parent);
+  String get title => "Failed to load events...";
+  String get content => "Refresh the page or pick a different genre";
+  Object operator [](String key) {
+    var index = key.indexOf('.');
+    if (index > 0) {
+      return (this[key.substring(0, index)]
+          as i69n.I69nMessageBundle)[key.substring(index + 1)];
+    }
+    switch (key) {
+      case 'title':
+        return title;
+      case 'content':
+        return content;
       default:
         return key;
     }

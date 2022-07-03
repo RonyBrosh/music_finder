@@ -6,3 +6,6 @@ genre_picker:
 
 event_picker:
   title (String genre): '$genre events'
+  error:
+    title: 'Failed to load events...'
+    content: 'Refresh the page or pick a different genre'

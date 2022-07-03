@@ -1,9 +1,11 @@
 import 'package:bdd/bdd.dart';
 
+const _fetchGenresEndpoint = '/discovery/v2/classifications/KZFzniwnSyZfZ7v7nJ?apikey=XHbCIy9TEnel0iAvBEC0CLLxZG96YxJB';
+
 final fetchGenresFailsScenario = Scenario(
   handlers: [
     MockedRequestHandler(
-      path: '/discovery/v2/classifications/KZFzniwnSyZfZ7v7nJ?apikey=XHbCIy9TEnel0iAvBEC0CLLxZG96YxJB',
+      path: _fetchGenresEndpoint,
       result: MockedRequestHandler.returnError(errorCode: 404),
     ),
   ],
@@ -12,7 +14,7 @@ final fetchGenresFailsScenario = Scenario(
 final fetchGenresSucceedsScenario = Scenario(
   handlers: [
     MockedRequestHandler(
-      path: '/discovery/v2/classifications/KZFzniwnSyZfZ7v7nJ?apikey=XHbCIy9TEnel0iAvBEC0CLLxZG96YxJB',
+      path: _fetchGenresEndpoint,
       result: MockedRequestHandler.returnSuccess(
         data: '''
         {

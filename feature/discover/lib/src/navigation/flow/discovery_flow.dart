@@ -5,12 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flow_builder/flow_builder.dart';
 
 class DiscoveryFlow extends StatelessWidget {
-  const DiscoveryFlow({Key? key}) : super(key: key);
+  const DiscoveryFlow({Key? key, this.initialState}) : super(key: key);
+
+  final DiscoveryFlowState? initialState;
 
   @override
   Widget build(BuildContext context) {
     return FlowBuilder<DiscoveryFlowState>(
-      state: const DiscoveryFlowState.genre(),
+      state: initialState ?? const DiscoveryFlowState.genre(),
       onGeneratePages: (state, pages) {
         return state.map(
           genre: (_) => [

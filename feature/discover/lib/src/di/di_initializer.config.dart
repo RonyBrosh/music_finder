@@ -12,10 +12,11 @@ import '../data/api/ticket_master/interceptor/ticket_master_interceptor.dart'
     as _i6;
 import '../data/api/ticket_master/ticket_master_api.dart' as _i5;
 import '../domain/repository/discover_repository.dart' as _i7;
-import '../domain/use_case/get_genres_use_case.dart' as _i8;
+import '../domain/use_case/get_events_use_case.dart' as _i8;
+import '../domain/use_case/get_genres_use_case.dart' as _i9;
 import '../navigation/router/discovery_router.dart' as _i4;
 import 'ticket_master_module.dart'
-    as _i9; // ignore_for_file: unnecessary_lambdas
+    as _i10; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -32,9 +33,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i6.TicketMasterInterceptor());
   gh.factory<_i7.DiscoverRepository>(
       () => _i7.DiscoverRepository(get<_i5.TicketMasterApi>()));
-  gh.factory<_i8.GetGenresUseCase>(
-      () => _i8.GetGenresUseCase(get<_i7.DiscoverRepository>()));
+  gh.factory<_i8.GetEventsUseCase>(
+      () => _i8.GetEventsUseCase(get<_i7.DiscoverRepository>()));
+  gh.factory<_i9.GetGenresUseCase>(
+      () => _i9.GetGenresUseCase(get<_i7.DiscoverRepository>()));
   return get;
 }
 
-class _$TicketMasterModule extends _i9.TicketMasterModule {}
+class _$TicketMasterModule extends _i10.TicketMasterModule {}

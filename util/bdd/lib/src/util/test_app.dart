@@ -20,8 +20,6 @@ Future<void> runTestApp({
 
   postDI?.call();
 
-  await tester.pumpWidget(
-    MaterialApp(home: pageBuilder()),
-  );
+  await tester.pumpWidget(MaterialApp(home: pageBuilder()));
   await tester.pumpAndSettle();
 }

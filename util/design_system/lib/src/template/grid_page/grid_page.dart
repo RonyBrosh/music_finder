@@ -1,6 +1,7 @@
 import 'package:core/core.dart';
 import 'package:design_system/src/atom/dimens.dart';
 import 'package:design_system/src/molecule/platform_app_bar.dart';
+import 'package:design_system/src/molecule/platform_loading.dart';
 import 'package:design_system/src/molecule/platform_scaffold.dart';
 import 'package:design_system/src/template/grid_page/bloc/grid_page_bloc.dart';
 import 'package:flutter/material.dart';
@@ -47,9 +48,8 @@ class GridPage<T> extends StatelessWidget {
                   return onBuildItem(data[index]);
                 },
               ),
-              orElse: () => Center(
-                child: Text('Loading'),
-              ),
+              loading: () => const PlatformLoading(),
+              orElse: () => const SizedBox(),
             );
           },
         ),

@@ -19,8 +19,11 @@ class _$DiscoveryRouter extends RootStackRouter {
   @override
   final Map<String, PageFactory> pagesMap = {
     DiscoveryFlowRoute.name: (routeData) {
+      final args = routeData.argsAs<DiscoveryFlowRouteArgs>(
+          orElse: () => const DiscoveryFlowRouteArgs());
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const DiscoveryFlow());
+          routeData: routeData,
+          child: DiscoveryFlow(key: args.key, initialState: args.initialState));
     }
   };
 
@@ -34,9 +37,24 @@ class _$DiscoveryRouter extends RootStackRouter {
 
 /// generated route for
 /// [DiscoveryFlow]
-class DiscoveryFlowRoute extends PageRouteInfo<void> {
-  const DiscoveryFlowRoute()
-      : super(DiscoveryFlowRoute.name, path: '/discover');
+class DiscoveryFlowRoute extends PageRouteInfo<DiscoveryFlowRouteArgs> {
+  DiscoveryFlowRoute({Key? key, DiscoveryFlowState? initialState})
+      : super(DiscoveryFlowRoute.name,
+            path: '/discover',
+            args: DiscoveryFlowRouteArgs(key: key, initialState: initialState));
 
   static const String name = 'DiscoveryFlowRoute';
+}
+
+class DiscoveryFlowRouteArgs {
+  const DiscoveryFlowRouteArgs({this.key, this.initialState});
+
+  final Key? key;
+
+  final DiscoveryFlowState? initialState;
+
+  @override
+  String toString() {
+    return 'DiscoveryFlowRouteArgs{key: $key, initialState: $initialState}';
+  }
 }
