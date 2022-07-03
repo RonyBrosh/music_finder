@@ -5,4 +5,4 @@ genre_picker:
     content: 'Swipe down to refresh the page'
 
 event_picker:
-  title (String genre): 'Pick $genre event'
+  title (String genre): '$genre events'
