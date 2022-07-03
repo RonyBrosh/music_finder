@@ -15,7 +15,8 @@ class DiscoverRepository {
     return result.map((data) => data.toGenres());
   }
 
-  Future<ResultState<List<Event>>> loadEvents() async {
-    return ResultState.failure(Exception('Failed to load events'));
+  Future<ResultState<List<Event>>> loadEvents({required Genre genre}) async {
+    final result = await ResultState.fromAsync(() => _ticketMasterApi.getEvents(genreId: genre.id));
+    return result.map((data) => data.toEvents());
   }
 }

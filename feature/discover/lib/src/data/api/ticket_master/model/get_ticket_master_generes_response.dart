@@ -17,7 +17,7 @@ class TicketMasterGenresResponse with _$TicketMasterGenresResponse {
   factory TicketMasterGenresResponse.fromJson(Map<String, dynamic> json) => _$TicketMasterGenresResponseFromJson(json);
 
   List<Genre> toGenres() {
-    return genres.map((deezerGenre) => deezerGenre.toGenre()).toList(growable: false);
+    return genres.map((ticketMasterGenre) => ticketMasterGenre.toGenre()).toList(growable: false);
   }
 }
 

@@ -7,8 +7,8 @@ class Event with _$Event {
   const factory Event({
     required String id,
     required String name,
-    required String image,
     required String venue,
-    required DateTime date,
+    required String url,
+    required DateTime dateTime,
   }) = _Event;
 }

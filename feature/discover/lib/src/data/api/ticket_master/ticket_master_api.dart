@@ -1,3 +1,4 @@
+import 'package:discover/src/data/api/ticket_master/model/get_ticket_master_events_response.dart';
 import 'package:discover/src/data/api/ticket_master/model/get_ticket_master_generes_response.dart';
 import 'package:discover/src/di/ticket_master_module.dart';
 import 'package:injectable/injectable.dart';
@@ -14,4 +15,7 @@ abstract class TicketMasterApi {
 
   @GET('/discovery/v2/classifications/KZFzniwnSyZfZ7v7nJ')
   Future<TicketMasterGenresResponse> getGenres();
+
+  @GET('/discovery/v2/events?includeTBA=no&includeTBD=no&sort=date,asc&size=100&dmaId=602')
+  Future<TicketMasterEventsResponse> getEvents({@Query('genreId') required String genreId});
 }

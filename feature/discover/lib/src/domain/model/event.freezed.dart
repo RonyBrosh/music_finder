@@ -18,9 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Event {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
   String get venue => throw _privateConstructorUsedError;
-  DateTime get date => throw _privateConstructorUsedError;
+  String get url => throw _privateConstructorUsedError;
+  DateTime get dateTime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $EventCopyWith<Event> get copyWith => throw _privateConstructorUsedError;
@@ -31,7 +31,7 @@ abstract class $EventCopyWith<$Res> {
   factory $EventCopyWith(Event value, $Res Function(Event) then) =
       _$EventCopyWithImpl<$Res>;
   $Res call(
-      {String id, String name, String image, String venue, DateTime date});
+      {String id, String name, String venue, String url, DateTime dateTime});
 }
 
 /// @nodoc
@@ -46,9 +46,9 @@ class _$EventCopyWithImpl<$Res> implements $EventCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
-    Object? image = freezed,
     Object? venue = freezed,
-    Object? date = freezed,
+    Object? url = freezed,
+    Object? dateTime = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -59,17 +59,17 @@ class _$EventCopyWithImpl<$Res> implements $EventCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      image: image == freezed
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as String,
       venue: venue == freezed
           ? _value.venue
           : venue // ignore: cast_nullable_to_non_nullable
               as String,
-      date: date == freezed
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      dateTime: dateTime == freezed
+          ? _value.dateTime
+          : dateTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -81,7 +81,7 @@ abstract class _$$_EventCopyWith<$Res> implements $EventCopyWith<$Res> {
       __$$_EventCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id, String name, String image, String venue, DateTime date});
+      {String id, String name, String venue, String url, DateTime dateTime});
 }
 
 /// @nodoc
@@ -97,9 +97,9 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
-    Object? image = freezed,
     Object? venue = freezed,
-    Object? date = freezed,
+    Object? url = freezed,
+    Object? dateTime = freezed,
   }) {
     return _then(_$_Event(
       id: id == freezed
@@ -110,17 +110,17 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      image: image == freezed
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as String,
       venue: venue == freezed
           ? _value.venue
           : venue // ignore: cast_nullable_to_non_nullable
               as String,
-      date: date == freezed
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      dateTime: dateTime == freezed
+          ? _value.dateTime
+          : dateTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -132,24 +132,24 @@ class _$_Event implements _Event {
   const _$_Event(
       {required this.id,
       required this.name,
-      required this.image,
       required this.venue,
-      required this.date});
+      required this.url,
+      required this.dateTime});
 
   @override
   final String id;
   @override
   final String name;
   @override
-  final String image;
-  @override
   final String venue;
   @override
-  final DateTime date;
+  final String url;
+  @override
+  final DateTime dateTime;
 
   @override
   String toString() {
-    return 'Event(id: $id, name: $name, image: $image, venue: $venue, date: $date)';
+    return 'Event(id: $id, name: $name, venue: $venue, url: $url, dateTime: $dateTime)';
   }
 
   @override
@@ -159,9 +159,9 @@ class _$_Event implements _Event {
             other is _$_Event &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.image, image) &&
             const DeepCollectionEquality().equals(other.venue, venue) &&
-            const DeepCollectionEquality().equals(other.date, date));
+            const DeepCollectionEquality().equals(other.url, url) &&
+            const DeepCollectionEquality().equals(other.dateTime, dateTime));
   }
 
   @override
@@ -169,9 +169,9 @@ class _$_Event implements _Event {
       runtimeType,
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(image),
       const DeepCollectionEquality().hash(venue),
-      const DeepCollectionEquality().hash(date));
+      const DeepCollectionEquality().hash(url),
+      const DeepCollectionEquality().hash(dateTime));
 
   @JsonKey(ignore: true)
   @override
@@ -183,20 +183,20 @@ abstract class _Event implements Event {
   const factory _Event(
       {required final String id,
       required final String name,
-      required final String image,
       required final String venue,
-      required final DateTime date}) = _$_Event;
+      required final String url,
+      required final DateTime dateTime}) = _$_Event;
 
   @override
   String get id => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override
-  String get image => throw _privateConstructorUsedError;
-  @override
   String get venue => throw _privateConstructorUsedError;
   @override
-  DateTime get date => throw _privateConstructorUsedError;
+  String get url => throw _privateConstructorUsedError;
+  @override
+  DateTime get dateTime => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_EventCopyWith<_$_Event> get copyWith =>

@@ -4,6 +4,7 @@ import 'package:discover/src/domain/model/event.dart';
 import 'package:discover/src/domain/model/genre.dart';
 import 'package:discover/src/domain/use_case/get_events_use_case.dart';
 import 'package:discover/src/localisation/build_context_extension.dart';
+import 'package:discover/src/presentation/event_picker/widget/event_card.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
@@ -19,9 +20,9 @@ class EventPickerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridPage<Event>(
       title: context.discoverTranslation.event_picker.title(genre.name),
-      onLoad: diContainer<GetEventsUseCase>()(),
+      onLoad: diContainer<GetEventsUseCase>()(genre: genre),
       onError: () => _showError(context),
-      onBuildItem: (event) => Center(),
+      onBuildItem: (event) => EventCard(event: event),
       crossAxisCount: kIsWeb ? 2 : 1,
     );
   }

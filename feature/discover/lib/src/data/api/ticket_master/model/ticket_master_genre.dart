@@ -18,7 +18,7 @@ class TicketMasterGenre with _$TicketMasterGenre {
 
   Genre toGenre() {
     return Genre(
-      id: id.toString(),
+      id: id,
       name: name,
     );
   }

@@ -8,12 +8,18 @@ import 'package:discover/src/presentation/event_picker/widget/event_picker_page.
 
 import './step/the_page_is_shown_and_fetch_events_endpoint_fails.dart';
 import 'package:bdd/src/steps/i_see_alert.dart';
+import './step/the_page_is_shown_and_fetch_events_endpoint_succeeds.dart';
+import './step/i_see_events_items.dart';
 
 void main() {
   group('''Event picker''', () {
     testWidgets('''Fetch events fails''', (tester) async {
       await thePageIsShownAndFetchEventsEndpointFails(tester);
       await iSeeAlert(tester, 'Failed to load events...', 'Refresh the page or pick a different genre', 'OK', null);
+    });
+    testWidgets('''Fetch events succeeds''', (tester) async {
+      await thePageIsShownAndFetchEventsEndpointSucceeds(tester);
+      await iSeeEventsItems(tester);
     });
   });
 }
