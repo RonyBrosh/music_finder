@@ -13508,3 +13508,18 @@ final fetchEventsSucceedsScenario = Scenario(
     ),
   ],
 );
+
+final fetchEventsEmptyScenario = Scenario(
+  handlers: [
+    MockedRequestHandler(
+      path: _fetchEventsEndpoint,
+      result: MockedRequestHandler.returnSuccess(data: '''
+        {
+	"_embedded": {
+		"events": []
+		}
+		}
+		'''),
+    ),
+  ],
+);

@@ -9,3 +9,7 @@ Feature: Event picker
   Scenario: Fetch events succeeds
     Given the page is shown and fetch events endpoint succeeds
     Then i see events items
+
+  Scenario: No events
+    Given the page is shown and fetch events return empty list
+    Then i see text {'No results...'}

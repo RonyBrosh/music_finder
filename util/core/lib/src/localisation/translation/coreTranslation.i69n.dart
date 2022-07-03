@@ -36,6 +36,7 @@ String _cardinal(int count,
 class CoreTranslation implements i69n.I69nMessageBundle {
   const CoreTranslation();
   DialogCoreTranslation get dialog => DialogCoreTranslation(this);
+  String get noResults => "No results...";
   Object operator [](String key) {
     var index = key.indexOf('.');
     if (index > 0) {
@@ -45,6 +46,8 @@ class CoreTranslation implements i69n.I69nMessageBundle {
     switch (key) {
       case 'dialog':
         return dialog;
+      case 'noResults':
+        return noResults;
       default:
         return key;
     }

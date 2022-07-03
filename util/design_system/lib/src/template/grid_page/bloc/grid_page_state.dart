@@ -8,5 +8,7 @@ class GridPageState<T> with _$GridPageState {
 
   const factory GridPageState.error() = _Error;
 
-  const factory GridPageState.success(List<T> genres) = _Success;
+  const factory GridPageState.success(List<T> data) = _Success;
+
+  const factory GridPageState.empty() = _Empty;
 }

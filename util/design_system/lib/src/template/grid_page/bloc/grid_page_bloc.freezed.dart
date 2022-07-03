@@ -170,7 +170,8 @@ mixin _$GridPageState<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<T> genres) success,
+    required TResult Function(List<T> data) success,
+    required TResult Function() empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -178,7 +179,8 @@ mixin _$GridPageState<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<T> genres)? success,
+    TResult Function(List<T> data)? success,
+    TResult Function()? empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -186,7 +188,8 @@ mixin _$GridPageState<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<T> genres)? success,
+    TResult Function(List<T> data)? success,
+    TResult Function()? empty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -196,6 +199,7 @@ mixin _$GridPageState<T> {
     required TResult Function(_Loading<T> value) loading,
     required TResult Function(_Error<T> value) error,
     required TResult Function(_Success<T> value) success,
+    required TResult Function(_Empty<T> value) empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -204,6 +208,7 @@ mixin _$GridPageState<T> {
     TResult Function(_Loading<T> value)? loading,
     TResult Function(_Error<T> value)? error,
     TResult Function(_Success<T> value)? success,
+    TResult Function(_Empty<T> value)? empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -212,6 +217,7 @@ mixin _$GridPageState<T> {
     TResult Function(_Loading<T> value)? loading,
     TResult Function(_Error<T> value)? error,
     TResult Function(_Success<T> value)? success,
+    TResult Function(_Empty<T> value)? empty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -278,7 +284,8 @@ class _$_Initial<T> implements _Initial<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<T> genres) success,
+    required TResult Function(List<T> data) success,
+    required TResult Function() empty,
   }) {
     return initial();
   }
@@ -289,7 +296,8 @@ class _$_Initial<T> implements _Initial<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<T> genres)? success,
+    TResult Function(List<T> data)? success,
+    TResult Function()? empty,
   }) {
     return initial?.call();
   }
@@ -300,7 +308,8 @@ class _$_Initial<T> implements _Initial<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<T> genres)? success,
+    TResult Function(List<T> data)? success,
+    TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -316,6 +325,7 @@ class _$_Initial<T> implements _Initial<T> {
     required TResult Function(_Loading<T> value) loading,
     required TResult Function(_Error<T> value) error,
     required TResult Function(_Success<T> value) success,
+    required TResult Function(_Empty<T> value) empty,
   }) {
     return initial(this);
   }
@@ -327,6 +337,7 @@ class _$_Initial<T> implements _Initial<T> {
     TResult Function(_Loading<T> value)? loading,
     TResult Function(_Error<T> value)? error,
     TResult Function(_Success<T> value)? success,
+    TResult Function(_Empty<T> value)? empty,
   }) {
     return initial?.call(this);
   }
@@ -338,6 +349,7 @@ class _$_Initial<T> implements _Initial<T> {
     TResult Function(_Loading<T> value)? loading,
     TResult Function(_Error<T> value)? error,
     TResult Function(_Success<T> value)? success,
+    TResult Function(_Empty<T> value)? empty,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -395,7 +407,8 @@ class _$_Loading<T> implements _Loading<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<T> genres) success,
+    required TResult Function(List<T> data) success,
+    required TResult Function() empty,
   }) {
     return loading();
   }
@@ -406,7 +419,8 @@ class _$_Loading<T> implements _Loading<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<T> genres)? success,
+    TResult Function(List<T> data)? success,
+    TResult Function()? empty,
   }) {
     return loading?.call();
   }
@@ -417,7 +431,8 @@ class _$_Loading<T> implements _Loading<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<T> genres)? success,
+    TResult Function(List<T> data)? success,
+    TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -433,6 +448,7 @@ class _$_Loading<T> implements _Loading<T> {
     required TResult Function(_Loading<T> value) loading,
     required TResult Function(_Error<T> value) error,
     required TResult Function(_Success<T> value) success,
+    required TResult Function(_Empty<T> value) empty,
   }) {
     return loading(this);
   }
@@ -444,6 +460,7 @@ class _$_Loading<T> implements _Loading<T> {
     TResult Function(_Loading<T> value)? loading,
     TResult Function(_Error<T> value)? error,
     TResult Function(_Success<T> value)? success,
+    TResult Function(_Empty<T> value)? empty,
   }) {
     return loading?.call(this);
   }
@@ -455,6 +472,7 @@ class _$_Loading<T> implements _Loading<T> {
     TResult Function(_Loading<T> value)? loading,
     TResult Function(_Error<T> value)? error,
     TResult Function(_Success<T> value)? success,
+    TResult Function(_Empty<T> value)? empty,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -511,7 +529,8 @@ class _$_Error<T> implements _Error<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<T> genres) success,
+    required TResult Function(List<T> data) success,
+    required TResult Function() empty,
   }) {
     return error();
   }
@@ -522,7 +541,8 @@ class _$_Error<T> implements _Error<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<T> genres)? success,
+    TResult Function(List<T> data)? success,
+    TResult Function()? empty,
   }) {
     return error?.call();
   }
@@ -533,7 +553,8 @@ class _$_Error<T> implements _Error<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<T> genres)? success,
+    TResult Function(List<T> data)? success,
+    TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -549,6 +570,7 @@ class _$_Error<T> implements _Error<T> {
     required TResult Function(_Loading<T> value) loading,
     required TResult Function(_Error<T> value) error,
     required TResult Function(_Success<T> value) success,
+    required TResult Function(_Empty<T> value) empty,
   }) {
     return error(this);
   }
@@ -560,6 +582,7 @@ class _$_Error<T> implements _Error<T> {
     TResult Function(_Loading<T> value)? loading,
     TResult Function(_Error<T> value)? error,
     TResult Function(_Success<T> value)? success,
+    TResult Function(_Empty<T> value)? empty,
   }) {
     return error?.call(this);
   }
@@ -571,6 +594,7 @@ class _$_Error<T> implements _Error<T> {
     TResult Function(_Loading<T> value)? loading,
     TResult Function(_Error<T> value)? error,
     TResult Function(_Success<T> value)? success,
+    TResult Function(_Empty<T> value)? empty,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -589,7 +613,7 @@ abstract class _$$_SuccessCopyWith<T, $Res> {
   factory _$$_SuccessCopyWith(
           _$_Success<T> value, $Res Function(_$_Success<T>) then) =
       __$$_SuccessCopyWithImpl<T, $Res>;
-  $Res call({List<T> genres});
+  $Res call({List<T> data});
 }
 
 /// @nodoc
@@ -605,12 +629,12 @@ class __$$_SuccessCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object? genres = freezed,
+    Object? data = freezed,
   }) {
     return _then(_$_Success<T>(
-      genres == freezed
-          ? _value._genres
-          : genres // ignore: cast_nullable_to_non_nullable
+      data == freezed
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
               as List<T>,
     ));
   }
@@ -619,18 +643,18 @@ class __$$_SuccessCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$_Success<T> implements _Success<T> {
-  const _$_Success(final List<T> genres) : _genres = genres;
+  const _$_Success(final List<T> data) : _data = data;
 
-  final List<T> _genres;
+  final List<T> _data;
   @override
-  List<T> get genres {
+  List<T> get data {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_genres);
+    return EqualUnmodifiableListView(_data);
   }
 
   @override
   String toString() {
-    return 'GridPageState<$T>.success(genres: $genres)';
+    return 'GridPageState<$T>.success(data: $data)';
   }
 
   @override
@@ -638,12 +662,12 @@ class _$_Success<T> implements _Success<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Success<T> &&
-            const DeepCollectionEquality().equals(other._genres, _genres));
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_genres));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
@@ -656,9 +680,10 @@ class _$_Success<T> implements _Success<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(List<T> genres) success,
+    required TResult Function(List<T> data) success,
+    required TResult Function() empty,
   }) {
-    return success(genres);
+    return success(data);
   }
 
   @override
@@ -667,9 +692,10 @@ class _$_Success<T> implements _Success<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<T> genres)? success,
+    TResult Function(List<T> data)? success,
+    TResult Function()? empty,
   }) {
-    return success?.call(genres);
+    return success?.call(data);
   }
 
   @override
@@ -678,11 +704,12 @@ class _$_Success<T> implements _Success<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(List<T> genres)? success,
+    TResult Function(List<T> data)? success,
+    TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(genres);
+      return success(data);
     }
     return orElse();
   }
@@ -694,6 +721,7 @@ class _$_Success<T> implements _Success<T> {
     required TResult Function(_Loading<T> value) loading,
     required TResult Function(_Error<T> value) error,
     required TResult Function(_Success<T> value) success,
+    required TResult Function(_Empty<T> value) empty,
   }) {
     return success(this);
   }
@@ -705,6 +733,7 @@ class _$_Success<T> implements _Success<T> {
     TResult Function(_Loading<T> value)? loading,
     TResult Function(_Error<T> value)? error,
     TResult Function(_Success<T> value)? success,
+    TResult Function(_Empty<T> value)? empty,
   }) {
     return success?.call(this);
   }
@@ -716,6 +745,7 @@ class _$_Success<T> implements _Success<T> {
     TResult Function(_Loading<T> value)? loading,
     TResult Function(_Error<T> value)? error,
     TResult Function(_Success<T> value)? success,
+    TResult Function(_Empty<T> value)? empty,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -726,10 +756,132 @@ class _$_Success<T> implements _Success<T> {
 }
 
 abstract class _Success<T> implements GridPageState<T> {
-  const factory _Success(final List<T> genres) = _$_Success<T>;
+  const factory _Success(final List<T> data) = _$_Success<T>;
 
-  List<T> get genres => throw _privateConstructorUsedError;
+  List<T> get data => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_SuccessCopyWith<T, _$_Success<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_EmptyCopyWith<T, $Res> {
+  factory _$$_EmptyCopyWith(
+          _$_Empty<T> value, $Res Function(_$_Empty<T>) then) =
+      __$$_EmptyCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$_EmptyCopyWithImpl<T, $Res>
+    extends _$GridPageStateCopyWithImpl<T, $Res>
+    implements _$$_EmptyCopyWith<T, $Res> {
+  __$$_EmptyCopyWithImpl(_$_Empty<T> _value, $Res Function(_$_Empty<T>) _then)
+      : super(_value, (v) => _then(v as _$_Empty<T>));
+
+  @override
+  _$_Empty<T> get _value => super._value as _$_Empty<T>;
+}
+
+/// @nodoc
+
+class _$_Empty<T> implements _Empty<T> {
+  const _$_Empty();
+
+  @override
+  String toString() {
+    return 'GridPageState<$T>.empty()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Empty<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() error,
+    required TResult Function(List<T> data) success,
+    required TResult Function() empty,
+  }) {
+    return empty();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? error,
+    TResult Function(List<T> data)? success,
+    TResult Function()? empty,
+  }) {
+    return empty?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? error,
+    TResult Function(List<T> data)? success,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(_Loading<T> value) loading,
+    required TResult Function(_Error<T> value) error,
+    required TResult Function(_Success<T> value) success,
+    required TResult Function(_Empty<T> value) empty,
+  }) {
+    return empty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(_Loading<T> value)? loading,
+    TResult Function(_Error<T> value)? error,
+    TResult Function(_Success<T> value)? success,
+    TResult Function(_Empty<T> value)? empty,
+  }) {
+    return empty?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(_Loading<T> value)? loading,
+    TResult Function(_Error<T> value)? error,
+    TResult Function(_Success<T> value)? success,
+    TResult Function(_Empty<T> value)? empty,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Empty<T> implements GridPageState<T> {
+  const factory _Empty() = _$_Empty<T>;
 }

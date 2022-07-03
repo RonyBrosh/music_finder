@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
 import 'package:design_system/src/atom/dimens.dart';
+import 'package:design_system/src/molecule/no_result.dart';
 import 'package:design_system/src/molecule/platform_app_bar.dart';
 import 'package:design_system/src/molecule/platform_loading.dart';
 import 'package:design_system/src/molecule/platform_scaffold.dart';
@@ -49,6 +50,7 @@ class GridPage<T> extends StatelessWidget {
                 },
               ),
               loading: () => const PlatformLoading(),
+              empty: () => const NoResult(),
               orElse: () => const SizedBox(),
             );
           },

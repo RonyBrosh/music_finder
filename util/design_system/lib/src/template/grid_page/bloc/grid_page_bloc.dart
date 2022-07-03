@@ -30,7 +30,13 @@ class GridPageBloc<T> extends Bloc<GridPageEvent, GridPageState> {
     final result = await _loadItems;
     emit(
       result.fold(
-        onSuccess: (data) => GridPageState.success(data),
+        onSuccess: (data) {
+          if (data.isEmpty) {
+            return GridPageState.empty();
+          } else {
+            return GridPageState.success(data);
+          }
+        },
         onFailure: (reason) => GridPageState.error(),
       ),
     );

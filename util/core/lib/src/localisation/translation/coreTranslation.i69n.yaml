@@ -1,3 +1,5 @@
 dialog:
   button:
     ok: 'OK'
+
+noResults: 'No results...'
