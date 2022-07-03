@@ -20,7 +20,7 @@ mixin _$Event {
   String get name => throw _privateConstructorUsedError;
   String get venue => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
-  DateTime get dateTime => throw _privateConstructorUsedError;
+  DateTime? get dateTime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $EventCopyWith<Event> get copyWith => throw _privateConstructorUsedError;
@@ -31,7 +31,7 @@ abstract class $EventCopyWith<$Res> {
   factory $EventCopyWith(Event value, $Res Function(Event) then) =
       _$EventCopyWithImpl<$Res>;
   $Res call(
-      {String id, String name, String venue, String url, DateTime dateTime});
+      {String id, String name, String venue, String url, DateTime? dateTime});
 }
 
 /// @nodoc
@@ -70,7 +70,7 @@ class _$EventCopyWithImpl<$Res> implements $EventCopyWith<$Res> {
       dateTime: dateTime == freezed
           ? _value.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
   }
 }
@@ -81,7 +81,7 @@ abstract class _$$_EventCopyWith<$Res> implements $EventCopyWith<$Res> {
       __$$_EventCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id, String name, String venue, String url, DateTime dateTime});
+      {String id, String name, String venue, String url, DateTime? dateTime});
 }
 
 /// @nodoc
@@ -121,7 +121,7 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
       dateTime: dateTime == freezed
           ? _value.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
   }
 }
@@ -145,7 +145,7 @@ class _$_Event implements _Event {
   @override
   final String url;
   @override
-  final DateTime dateTime;
+  final DateTime? dateTime;
 
   @override
   String toString() {
@@ -185,7 +185,7 @@ abstract class _Event implements Event {
       required final String name,
       required final String venue,
       required final String url,
-      required final DateTime dateTime}) = _$_Event;
+      required final DateTime? dateTime}) = _$_Event;
 
   @override
   String get id => throw _privateConstructorUsedError;
@@ -196,7 +196,7 @@ abstract class _Event implements Event {
   @override
   String get url => throw _privateConstructorUsedError;
   @override
-  DateTime get dateTime => throw _privateConstructorUsedError;
+  DateTime? get dateTime => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_EventCopyWith<_$_Event> get copyWith =>

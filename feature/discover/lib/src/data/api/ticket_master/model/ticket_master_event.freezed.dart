@@ -26,7 +26,7 @@ mixin _$TicketMasterEvent {
   @JsonKey(readValue: _readVenue)
   String get venue => throw _privateConstructorUsedError;
   @JsonKey(readValue: _readDate)
-  String get date => throw _privateConstructorUsedError;
+  String? get date => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,7 +44,7 @@ abstract class $TicketMasterEventCopyWith<$Res> {
       String name,
       String url,
       @JsonKey(readValue: _readVenue) String venue,
-      @JsonKey(readValue: _readDate) String date});
+      @JsonKey(readValue: _readDate) String? date});
 }
 
 /// @nodoc
@@ -84,7 +84,7 @@ class _$TicketMasterEventCopyWithImpl<$Res>
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -101,7 +101,7 @@ abstract class _$$_TicketMasterEventCopyWith<$Res>
       String name,
       String url,
       @JsonKey(readValue: _readVenue) String venue,
-      @JsonKey(readValue: _readDate) String date});
+      @JsonKey(readValue: _readDate) String? date});
 }
 
 /// @nodoc
@@ -143,7 +143,7 @@ class __$$_TicketMasterEventCopyWithImpl<$Res>
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -173,7 +173,7 @@ class _$_TicketMasterEvent extends _TicketMasterEvent {
   final String venue;
   @override
   @JsonKey(readValue: _readDate)
-  final String date;
+  final String? date;
 
   @override
   String toString() {
@@ -220,7 +220,7 @@ abstract class _TicketMasterEvent extends TicketMasterEvent {
           required final String name,
           required final String url,
           @JsonKey(readValue: _readVenue) required final String venue,
-          @JsonKey(readValue: _readDate) required final String date}) =
+          @JsonKey(readValue: _readDate) required final String? date}) =
       _$_TicketMasterEvent;
   const _TicketMasterEvent._() : super._();
 
@@ -238,7 +238,7 @@ abstract class _TicketMasterEvent extends TicketMasterEvent {
   String get venue => throw _privateConstructorUsedError;
   @override
   @JsonKey(readValue: _readDate)
-  String get date => throw _privateConstructorUsedError;
+  String? get date => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_TicketMasterEventCopyWith<_$_TicketMasterEvent> get copyWith =>

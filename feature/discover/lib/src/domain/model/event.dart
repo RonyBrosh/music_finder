@@ -9,6 +9,6 @@ class Event with _$Event {
     required String name,
     required String venue,
     required String url,
-    required DateTime dateTime,
+    required DateTime? dateTime,
   }) = _Event;
 }

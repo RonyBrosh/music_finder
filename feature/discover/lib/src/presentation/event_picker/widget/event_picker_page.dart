@@ -23,7 +23,7 @@ class EventPickerPage extends StatelessWidget {
       onLoad: diContainer<GetEventsUseCase>()(genre: genre),
       onError: () => _showError(context),
       onBuildItem: (event) => EventCard(event: event),
-      crossAxisCount: kIsWeb ? 2 : 1,
+      crossAxisCount: kIsWeb ? 4 : 1,
     );
   }
 

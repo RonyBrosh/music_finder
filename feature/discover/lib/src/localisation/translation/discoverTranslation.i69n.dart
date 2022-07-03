@@ -105,6 +105,8 @@ class Event_pickerDiscoverTranslation implements i69n.I69nMessageBundle {
   final DiscoverTranslation _parent;
   const Event_pickerDiscoverTranslation(this._parent);
   String title(String genre) => "$genre events";
+  String get hyperlink => "See it on Ticket Master";
+  String get noDate => "Date not available";
   ErrorEvent_pickerDiscoverTranslation get error =>
       ErrorEvent_pickerDiscoverTranslation(this);
   Object operator [](String key) {
@@ -116,6 +118,10 @@ class Event_pickerDiscoverTranslation implements i69n.I69nMessageBundle {
     switch (key) {
       case 'title ':
         return title;
+      case 'hyperlink':
+        return hyperlink;
+      case 'noDate':
+        return noDate;
       case 'error':
         return error;
       default:

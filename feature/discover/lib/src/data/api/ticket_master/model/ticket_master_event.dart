@@ -14,7 +14,7 @@ class TicketMasterEvent with _$TicketMasterEvent {
     required String name,
     required String url,
     @JsonKey(readValue: _readVenue) required String venue,
-    @JsonKey(readValue: _readDate) required String date,
+    @JsonKey(readValue: _readDate) required String? date,
   }) = _TicketMasterEvent;
 
   factory TicketMasterEvent.fromJson(Map<String, dynamic> json) => _$TicketMasterEventFromJson(json);
@@ -25,11 +25,21 @@ class TicketMasterEvent with _$TicketMasterEvent {
       name: name,
       url: url,
       venue: venue,
-      dateTime: DateTime.parse(date),
+      dateTime: _createDateTime(date),
     );
   }
 }
 
-Object _readDate(Map json, String key) => json[key] = [json['dates']['start']['dateTime']][0];
+Object? _readDate(Map json, String key) {
+  if (json['dates'] == null) {
+    return null;
+  }
+
+  return [json['dates']['start']['dateTime']][0];
+}
 
 Object _readVenue(Map json, String key) => json[key] = [json['_embedded']['venues'][0]['name']][0];
+
+DateTime? _createDateTime(String? date) {
+  return date != null ? DateTime.parse(date) : null;
+}

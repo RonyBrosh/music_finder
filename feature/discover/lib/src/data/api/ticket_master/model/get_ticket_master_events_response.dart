@@ -21,4 +21,10 @@ class TicketMasterEventsResponse with _$TicketMasterEventsResponse {
   }
 }
 
-Object _readEvents(Map json, String key) => json[key] = [json['_embedded']['events']][0];
+Object _readEvents(Map json, String key) {
+  if (json['_embedded'] == null) {
+    return [];
+  }
+
+  return [json['_embedded']['events']][0];
+}

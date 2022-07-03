@@ -15,9 +15,9 @@ class PlatformScaffold extends PlatformWidget<Widget, Scaffold> {
 
   @override
   Widget createCupertinoWidget(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: appBar?.createCupertinoWidget(context),
-      child: body,
+    return Scaffold(
+      appBar: appBar?.createCupertinoWidget(context),
+      body: body,
     );
   }
 

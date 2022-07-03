@@ -12,7 +12,7 @@ _$_TicketMasterEvent _$$_TicketMasterEventFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       url: json['url'] as String,
       venue: _readVenue(json, 'venue') as String,
-      date: _readDate(json, 'date') as String,
+      date: _readDate(json, 'date') as String?,
     );
 
 Map<String, dynamic> _$$_TicketMasterEventToJson(
