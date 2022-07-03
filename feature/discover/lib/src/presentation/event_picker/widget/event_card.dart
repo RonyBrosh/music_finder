@@ -2,7 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:discover/src/domain/model/event.dart';
 import 'package:discover/src/localisation/build_context_extension.dart';
 import 'package:flutter/material.dart';
-// import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class EventCard extends StatelessWidget {
   const EventCard({Key? key, required this.event}) : super(key: key);
@@ -32,7 +32,9 @@ class EventCard extends StatelessWidget {
   }
 
   Future<void> _launchURL(String url) async {
-    // await launchUrl(Uri.parse(url));
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
+    }
   }
 
   String _createDateText(BuildContext context, DateTime? dateTime) {

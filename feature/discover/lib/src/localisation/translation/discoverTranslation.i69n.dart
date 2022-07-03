@@ -105,7 +105,7 @@ class Event_pickerDiscoverTranslation implements i69n.I69nMessageBundle {
   final DiscoverTranslation _parent;
   const Event_pickerDiscoverTranslation(this._parent);
   String title(String genre) => "$genre events";
-  String get hyperlink => "See it on Ticket Master";
+  String get hyperlink => "See it on vendor's website";
   String get noDate => "Date not available";
   ErrorEvent_pickerDiscoverTranslation get error =>
       ErrorEvent_pickerDiscoverTranslation(this);
