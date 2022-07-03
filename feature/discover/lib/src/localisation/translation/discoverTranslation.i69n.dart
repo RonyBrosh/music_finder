@@ -104,7 +104,7 @@ class ErrorGenre_pickerDiscoverTranslation implements i69n.I69nMessageBundle {
 class Event_pickerDiscoverTranslation implements i69n.I69nMessageBundle {
   final DiscoverTranslation _parent;
   const Event_pickerDiscoverTranslation(this._parent);
-  String title(String genre) => "Pick $genre event";
+  String title(String genre) => "$genre events";
   Object operator [](String key) {
     var index = key.indexOf('.');
     if (index > 0) {
