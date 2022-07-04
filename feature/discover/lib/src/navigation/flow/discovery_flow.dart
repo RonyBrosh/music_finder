@@ -16,7 +16,7 @@ class DiscoveryFlow extends StatelessWidget {
       onGeneratePages: (state, pages) {
         return state.map(
           genre: (_) => [
-            MaterialPage(child: GenrePickerPage()),
+            MaterialPage(child: const GenrePickerPage()),
           ],
           event: (state) => [
             ...pages,

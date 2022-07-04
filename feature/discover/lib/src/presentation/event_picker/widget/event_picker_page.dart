@@ -9,12 +9,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
 class EventPickerPage extends StatelessWidget {
-  const EventPickerPage({
+  EventPickerPage({
     Key? key,
     required this.genre,
   }) : super(key: key);
 
   final Genre genre;
+  final LinkManager _linkManager = diContainer<LinkManager>();
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,10 @@ class EventPickerPage extends StatelessWidget {
       title: context.discoverTranslation.event_picker.title(genre.name),
       onLoad: diContainer<GetEventsUseCase>()(genre: genre),
       onError: () => _showError(context),
-      onBuildItem: (event) => EventCard(event: event),
+      onBuildItem: (event) => EventCard(
+        event: event,
+        onTap: (event) => _linkManager.openWebLink(event.url),
+      ),
       crossAxisCount: kIsWeb ? 4 : 1,
     );
   }

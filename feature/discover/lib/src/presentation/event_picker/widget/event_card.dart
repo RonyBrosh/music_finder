@@ -2,12 +2,16 @@ import 'package:design_system/design_system.dart';
 import 'package:discover/src/domain/model/event.dart';
 import 'package:discover/src/localisation/build_context_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 class EventCard extends StatelessWidget {
-  const EventCard({Key? key, required this.event}) : super(key: key);
+  const EventCard({
+    Key? key,
+    required this.event,
+    required this.onTap,
+  }) : super(key: key);
 
   final Event event;
+  final void Function(Event) onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -23,18 +27,12 @@ class EventCard extends StatelessWidget {
             TextLink(
               text: context.discoverTranslation.event_picker.hyperlink,
               url: event.url,
-              onTap: () => _launchURL(event.url),
+              onTap: () => onTap(event),
             ),
           ],
         ),
       ),
     );
-  }
-
-  Future<void> _launchURL(String url) async {
-    if (await canLaunchUrlString(url)) {
-      await launchUrlString(url);
-    }
   }
 
   String _createDateText(BuildContext context, DateTime? dateTime) {
