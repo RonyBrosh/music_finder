@@ -8,9 +8,7 @@ import 'package:discover/src/navigation/flow/discovery_flow_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:dio/dio.dart';
 
-import '../scenario/fetch_events_scenario.dart';
-
-Future<void> thePageIsShownAndFetchEventsEndpointSucceeds(WidgetTester tester) async {
+Future<void> theFlowIsRunningAndBeIsMockedWithScenario(WidgetTester tester, Scenario scenario) async {
   await runTestApp(
       tester: tester,
       pageBuilder: () => const DiscoveryFlow(
@@ -27,6 +25,6 @@ Future<void> thePageIsShownAndFetchEventsEndpointSucceeds(WidgetTester tester) a
         final mockRequestManager = diContainer<MockedRequestsManager>();
         ticketMasterDio.interceptors.add(MockedBackEndInterceptor(mockRequestManager));
 
-        theBeIsMockedWithScenario(tester, fetchEventsSucceedsScenario);
+        theBeIsMockedWithScenario(tester, scenario);
       });
 }
