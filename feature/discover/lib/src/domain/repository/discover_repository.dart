@@ -1,14 +1,20 @@
 import 'package:core/core.dart';
+import 'package:discover/src/data/api/deezer/deezer_api.dart';
 import 'package:discover/src/data/api/ticket_master/ticket_master_api.dart';
 import 'package:discover/src/domain/model/event.dart';
 import 'package:discover/src/domain/model/genre.dart';
+import 'package:discover/src/domain/model/track.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
 class DiscoverRepository {
-  const DiscoverRepository(this._ticketMasterApi);
+  const DiscoverRepository(
+    this._ticketMasterApi,
+    this._deezerApi,
+  );
 
   final TicketMasterApi _ticketMasterApi;
+  final DeezerApi _deezerApi;
 
   Future<ResultState<List<Genre>>> loadGenres() async {
     final result = await ResultState.fromAsync(_ticketMasterApi.getGenres);
@@ -18,5 +24,10 @@ class DiscoverRepository {
   Future<ResultState<List<Event>>> loadEvents({required Genre genre}) async {
     final result = await ResultState.fromAsync(() => _ticketMasterApi.getEvents(genreId: genre.id));
     return result.map((data) => data.toEvents());
+  }
+
+  Future<ResultState<List<Track>>> getTracks({required Event event}) async {
+    final result = await ResultState.fromAsync(() => _deezerApi.getTracks(text: event.name));
+    return result.map((data) => data.toTracks());
   }
 }

@@ -25,6 +25,12 @@ abstract class ResultState<T> {
     }
   }
 
+  doOnSuccess(void Function(T) onSuccess) {
+    if (this is Success) {
+      onSuccess((this as Success).data);
+    }
+  }
+
   ResultState<T2> map<T2>(T2 Function(T) mapSuccess) {
     return fold(
       onSuccess: (data) => ResultState.success(mapSuccess(data)),

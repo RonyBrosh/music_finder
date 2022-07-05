@@ -4,15 +4,25 @@ import 'package:injectable/injectable.dart';
 import 'package:dio/dio.dart';
 
 const ticketMasterDioTIParameterName = 'ticketMasterDioTIParameterName';
+const deezerDioTIParameterName = 'deezerDioTIParameterName';
 
 @module
 abstract class TicketMasterModule {
   @lazySingleton
   @Named(ticketMasterDioTIParameterName)
-  Dio get provideDio {
+  Dio get provideTicketMasterDio {
     final dio = Dio(BaseOptions(baseUrl: 'https://app.ticketmaster.com'));
     dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
     dio.interceptors.add(TicketMasterInterceptor());
+    dio.httpClientAdapter = getDioHttpAdapter();
+    return dio;
+  }
+
+  @lazySingleton
+  @Named(deezerDioTIParameterName)
+  Dio get provideDeezerDio {
+    final dio = Dio(BaseOptions(baseUrl: 'https://api.deezer.com'));
+    dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
     dio.httpClientAdapter = getDioHttpAdapter();
     return dio;
   }
