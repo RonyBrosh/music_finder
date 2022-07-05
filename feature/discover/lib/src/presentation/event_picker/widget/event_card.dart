@@ -20,33 +20,20 @@ class EventCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Flexible(
-            flex: 2,
-            child: AspectRatio(
-              aspectRatio: 2 / 3,
-              child: Image.network(
-                event.image,
-                fit: BoxFit.cover,
-              ),
+          AspectRatio(
+            aspectRatio: 3 / 2,
+            child: Image.network(
+              event.image,
+              fit: BoxFit.cover,
             ),
           ),
-          Flexible(
-            flex: 1,
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TextTitle(text: event.name),
-                  TextSubtitle(text: _createDateText(context, event.dateTime)),
-                  TextCaption(text: event.venue),
-                  TextLink(
-                    text: context.discoverTranslation.event_picker.hyperlink,
-                    url: event.url,
-                    onTap: () => onTap(event),
-                  ),
-                ],
-              ),
-            ),
+          TextTitle(text: event.name),
+          TextSubtitle(text: _createDateText(context, event.dateTime)),
+          TextCaption(text: event.venue),
+          TextLink(
+            text: context.discoverTranslation.event_picker.hyperlink,
+            url: event.url,
+            onTap: () => onTap(event),
           ),
         ],
       ),

@@ -8,6 +8,7 @@ import 'package:design_system/src/template/grid_page/bloc/grid_page_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class GridPage<T> extends StatelessWidget {
   const GridPage({
@@ -41,13 +42,17 @@ class GridPage<T> extends StatelessWidget {
           },
           builder: (context, state) {
             return state.maybeWhen(
-              success: (data) => GridView.builder(
-                padding: EdgeInsets.all(Space.small),
-                itemCount: data.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: crossAxisCount),
-                itemBuilder: (context, index) {
-                  return onBuildItem(data[index]);
-                },
+              success: (data) => Padding(
+                padding: const EdgeInsets.all(Space.small),
+                child: MasonryGridView.count(
+                  crossAxisCount: crossAxisCount,
+                  mainAxisSpacing: Space.tiny,
+                  crossAxisSpacing: Space.tiny,
+                  itemCount: data.length,
+                  itemBuilder: (context, index) {
+                    return onBuildItem(data[index]);
+                  },
+                ),
               ),
               loading: () => const PlatformLoading(),
               empty: () => const NoResult(),
