@@ -23,6 +23,8 @@ mixin _$TicketMasterEvent {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _readImage)
+  String get image => throw _privateConstructorUsedError;
   @JsonKey(readValue: _readVenue)
   String get venue => throw _privateConstructorUsedError;
   @JsonKey(readValue: _readDate)
@@ -43,6 +45,7 @@ abstract class $TicketMasterEventCopyWith<$Res> {
       {String id,
       String name,
       String url,
+      @JsonKey(readValue: _readImage) String image,
       @JsonKey(readValue: _readVenue) String venue,
       @JsonKey(readValue: _readDate) String? date});
 }
@@ -61,6 +64,7 @@ class _$TicketMasterEventCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? url = freezed,
+    Object? image = freezed,
     Object? venue = freezed,
     Object? date = freezed,
   }) {
@@ -76,6 +80,10 @@ class _$TicketMasterEventCopyWithImpl<$Res>
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String,
       venue: venue == freezed
           ? _value.venue
@@ -100,6 +108,7 @@ abstract class _$$_TicketMasterEventCopyWith<$Res>
       {String id,
       String name,
       String url,
+      @JsonKey(readValue: _readImage) String image,
       @JsonKey(readValue: _readVenue) String venue,
       @JsonKey(readValue: _readDate) String? date});
 }
@@ -120,6 +129,7 @@ class __$$_TicketMasterEventCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? url = freezed,
+    Object? image = freezed,
     Object? venue = freezed,
     Object? date = freezed,
   }) {
@@ -135,6 +145,10 @@ class __$$_TicketMasterEventCopyWithImpl<$Res>
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String,
       venue: venue == freezed
           ? _value.venue
@@ -155,6 +169,7 @@ class _$_TicketMasterEvent extends _TicketMasterEvent {
       {required this.id,
       required this.name,
       required this.url,
+      @JsonKey(readValue: _readImage) required this.image,
       @JsonKey(readValue: _readVenue) required this.venue,
       @JsonKey(readValue: _readDate) required this.date})
       : super._();
@@ -169,6 +184,9 @@ class _$_TicketMasterEvent extends _TicketMasterEvent {
   @override
   final String url;
   @override
+  @JsonKey(readValue: _readImage)
+  final String image;
+  @override
   @JsonKey(readValue: _readVenue)
   final String venue;
   @override
@@ -177,7 +195,7 @@ class _$_TicketMasterEvent extends _TicketMasterEvent {
 
   @override
   String toString() {
-    return 'TicketMasterEvent(id: $id, name: $name, url: $url, venue: $venue, date: $date)';
+    return 'TicketMasterEvent(id: $id, name: $name, url: $url, image: $image, venue: $venue, date: $date)';
   }
 
   @override
@@ -188,6 +206,7 @@ class _$_TicketMasterEvent extends _TicketMasterEvent {
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.url, url) &&
+            const DeepCollectionEquality().equals(other.image, image) &&
             const DeepCollectionEquality().equals(other.venue, venue) &&
             const DeepCollectionEquality().equals(other.date, date));
   }
@@ -199,6 +218,7 @@ class _$_TicketMasterEvent extends _TicketMasterEvent {
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(url),
+      const DeepCollectionEquality().hash(image),
       const DeepCollectionEquality().hash(venue),
       const DeepCollectionEquality().hash(date));
 
@@ -219,6 +239,7 @@ abstract class _TicketMasterEvent extends TicketMasterEvent {
           {required final String id,
           required final String name,
           required final String url,
+          @JsonKey(readValue: _readImage) required final String image,
           @JsonKey(readValue: _readVenue) required final String venue,
           @JsonKey(readValue: _readDate) required final String? date}) =
       _$_TicketMasterEvent;
@@ -233,6 +254,9 @@ abstract class _TicketMasterEvent extends TicketMasterEvent {
   String get name => throw _privateConstructorUsedError;
   @override
   String get url => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(readValue: _readImage)
+  String get image => throw _privateConstructorUsedError;
   @override
   @JsonKey(readValue: _readVenue)
   String get venue => throw _privateConstructorUsedError;

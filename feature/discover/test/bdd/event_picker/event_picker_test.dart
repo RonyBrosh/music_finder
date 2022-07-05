@@ -11,7 +11,7 @@ import './step/the_flow_is_running_and_be_is_mocked_with_scenario.dart';
 import 'package:bdd/src/steps/i_see_alert.dart';
 import './step/i_see_events_items.dart';
 import 'package:bdd_widget_test/step/i_see_text.dart';
-import 'package:bdd_widget_test/step/i_tap_text.dart';
+import './step/i_tap_a_web_link.dart';
 import './step/link_is_opened.dart';
 
 void main() {
@@ -30,7 +30,7 @@ void main() {
     });
     testWidgets('''Tap on web link''', (tester) async {
       await theFlowIsRunningAndBeIsMockedWithScenario(tester, fetchEventsOneEventScenario);
-      await iTapText(tester, "See it on vendor's website");
+      await iTapAWebLink(tester);
       await linkIsOpened(tester);
     });
   });

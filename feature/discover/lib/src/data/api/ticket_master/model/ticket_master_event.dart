@@ -13,6 +13,7 @@ class TicketMasterEvent with _$TicketMasterEvent {
     required String id,
     required String name,
     required String url,
+    @JsonKey(readValue: _readImage) required String image,
     @JsonKey(readValue: _readVenue) required String venue,
     @JsonKey(readValue: _readDate) required String? date,
   }) = _TicketMasterEvent;
@@ -25,6 +26,7 @@ class TicketMasterEvent with _$TicketMasterEvent {
       name: name,
       url: url,
       venue: venue,
+      image: image,
       dateTime: _createDateTime(date),
     );
   }
@@ -42,4 +44,11 @@ Object _readVenue(Map json, String key) => json[key] = [json['_embedded']['venue
 
 DateTime? _createDateTime(String? date) {
   return date != null ? DateTime.parse(date) : null;
+}
+
+Object _readImage(Map json, String key) {
+  final images = json['images'] as List;
+  final sizes = images.map((image) => image['width'] * image['height']).toList(growable: false)..sort();
+  final middleIndex = sizes.length ~/ 2;
+  return images[middleIndex]['url'];
 }

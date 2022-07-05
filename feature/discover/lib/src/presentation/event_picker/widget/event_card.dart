@@ -16,21 +16,39 @@ class EventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: InkWell(
-        onTap: () {},
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TextTitle(text: event.name),
-            TextSubtitle(text: _createDateText(context, event.dateTime)),
-            TextCaption(text: event.venue),
-            TextLink(
-              text: context.discoverTranslation.event_picker.hyperlink,
-              url: event.url,
-              onTap: () => onTap(event),
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Flexible(
+            flex: 2,
+            child: AspectRatio(
+              aspectRatio: 2 / 3,
+              child: Image.network(
+                event.image,
+                fit: BoxFit.cover,
+              ),
             ),
-          ],
-        ),
+          ),
+          Flexible(
+            flex: 1,
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TextTitle(text: event.name),
+                  TextSubtitle(text: _createDateText(context, event.dateTime)),
+                  TextCaption(text: event.venue),
+                  TextLink(
+                    text: context.discoverTranslation.event_picker.hyperlink,
+                    url: event.url,
+                    onTap: () => onTap(event),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

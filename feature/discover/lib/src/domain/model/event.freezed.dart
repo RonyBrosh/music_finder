@@ -19,6 +19,7 @@ mixin _$Event {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get venue => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
   DateTime? get dateTime => throw _privateConstructorUsedError;
 
@@ -31,7 +32,12 @@ abstract class $EventCopyWith<$Res> {
   factory $EventCopyWith(Event value, $Res Function(Event) then) =
       _$EventCopyWithImpl<$Res>;
   $Res call(
-      {String id, String name, String venue, String url, DateTime? dateTime});
+      {String id,
+      String name,
+      String venue,
+      String image,
+      String url,
+      DateTime? dateTime});
 }
 
 /// @nodoc
@@ -47,6 +53,7 @@ class _$EventCopyWithImpl<$Res> implements $EventCopyWith<$Res> {
     Object? id = freezed,
     Object? name = freezed,
     Object? venue = freezed,
+    Object? image = freezed,
     Object? url = freezed,
     Object? dateTime = freezed,
   }) {
@@ -62,6 +69,10 @@ class _$EventCopyWithImpl<$Res> implements $EventCopyWith<$Res> {
       venue: venue == freezed
           ? _value.venue
           : venue // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String,
       url: url == freezed
           ? _value.url
@@ -81,7 +92,12 @@ abstract class _$$_EventCopyWith<$Res> implements $EventCopyWith<$Res> {
       __$$_EventCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id, String name, String venue, String url, DateTime? dateTime});
+      {String id,
+      String name,
+      String venue,
+      String image,
+      String url,
+      DateTime? dateTime});
 }
 
 /// @nodoc
@@ -98,6 +114,7 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? venue = freezed,
+    Object? image = freezed,
     Object? url = freezed,
     Object? dateTime = freezed,
   }) {
@@ -113,6 +130,10 @@ class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res>
       venue: venue == freezed
           ? _value.venue
           : venue // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String,
       url: url == freezed
           ? _value.url
@@ -133,6 +154,7 @@ class _$_Event implements _Event {
       {required this.id,
       required this.name,
       required this.venue,
+      required this.image,
       required this.url,
       required this.dateTime});
 
@@ -143,13 +165,15 @@ class _$_Event implements _Event {
   @override
   final String venue;
   @override
+  final String image;
+  @override
   final String url;
   @override
   final DateTime? dateTime;
 
   @override
   String toString() {
-    return 'Event(id: $id, name: $name, venue: $venue, url: $url, dateTime: $dateTime)';
+    return 'Event(id: $id, name: $name, venue: $venue, image: $image, url: $url, dateTime: $dateTime)';
   }
 
   @override
@@ -160,6 +184,7 @@ class _$_Event implements _Event {
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.venue, venue) &&
+            const DeepCollectionEquality().equals(other.image, image) &&
             const DeepCollectionEquality().equals(other.url, url) &&
             const DeepCollectionEquality().equals(other.dateTime, dateTime));
   }
@@ -170,6 +195,7 @@ class _$_Event implements _Event {
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(venue),
+      const DeepCollectionEquality().hash(image),
       const DeepCollectionEquality().hash(url),
       const DeepCollectionEquality().hash(dateTime));
 
@@ -184,6 +210,7 @@ abstract class _Event implements Event {
       {required final String id,
       required final String name,
       required final String venue,
+      required final String image,
       required final String url,
       required final DateTime? dateTime}) = _$_Event;
 
@@ -193,6 +220,8 @@ abstract class _Event implements Event {
   String get name => throw _privateConstructorUsedError;
   @override
   String get venue => throw _privateConstructorUsedError;
+  @override
+  String get image => throw _privateConstructorUsedError;
   @override
   String get url => throw _privateConstructorUsedError;
   @override

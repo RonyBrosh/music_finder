@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bdd/bdd.dart';
 import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
@@ -9,6 +11,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:dio/dio.dart';
 
 Future<void> theFlowIsRunningAndBeIsMockedWithScenario(WidgetTester tester, Scenario scenario) async {
+  HttpOverrides.global = null;
   await runTestApp(
       tester: tester,
       pageBuilder: () => const DiscoveryFlow(

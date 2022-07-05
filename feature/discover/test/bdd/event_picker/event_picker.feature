@@ -17,5 +17,5 @@ Feature: Event picker
 
   Scenario: Tap on web link
     Given the flow is running and BE is mocked with scenario {fetchEventsOneEventScenario}
-    When i tap text {"See it on vendor's website"}
+    When i tap a web link
     Then link is opened
