@@ -15,15 +15,13 @@ class GenreCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: InkWell(
-        onTap: () => onTap(genre),
-        child: Stack(
-          children: [
-            Align(
-              child: TextCaption(text: genre.name),
-              alignment: Alignment.bottomLeft,
-            )
-          ],
+      child: AspectRatio(
+        aspectRatio: 1 / 1,
+        child: InkWell(
+          onTap: () => onTap(genre),
+          child: Center(
+            child: TextTitle(text: genre.name),
+          ),
         ),
       ),
     );
