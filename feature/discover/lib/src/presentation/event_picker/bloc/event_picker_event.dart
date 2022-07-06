@@ -7,6 +7,4 @@ class EventPickerEvent with _$EventPickerEvent {
   const factory EventPickerEvent.openWeblink(Event event) = _OpenWeblink;
 
   const factory EventPickerEvent.play(Event event) = _Play;
-
-  const factory EventPickerEvent.close() = _Close;
 }

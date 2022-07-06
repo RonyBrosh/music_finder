@@ -1,5 +1,4 @@
 import 'package:discover/src/data/api/deezer/model/get_deezer_tracks_response.dart';
-import 'package:discover/src/data/api/ticket_master/model/get_ticket_master_events_response.dart';
 import 'package:discover/src/di/ticket_master_module.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';

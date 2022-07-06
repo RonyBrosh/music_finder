@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
+import 'package:discover/src/data/audio_player_manager.dart';
 import 'package:discover/src/domain/model/event.dart';
 import 'package:discover/src/domain/model/genre.dart';
 import 'package:discover/src/localisation/build_context_extension.dart';
@@ -10,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-class EventPickerPage extends StatelessWidget {
+class EventPickerPage extends StatefulWidget {
   EventPickerPage({
     Key? key,
     required this.genre,
@@ -19,11 +20,22 @@ class EventPickerPage extends StatelessWidget {
   final Genre genre;
 
   @override
+  State<EventPickerPage> createState() => _EventPickerPageState();
+}
+
+class _EventPickerPageState extends State<EventPickerPage> {
+  @override
+  void dispose() async {
+    super.dispose();
+    await AudioPlayerManager.stop();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => diContainer<EventPickerBloc>(parameter: genre),
+      create: (_) => diContainer<EventPickerBloc>(parameter: widget.genre),
       child: PlatformScaffold(
-        appBar: PlatformAppBar(title: context.discoverTranslation.event_picker.title(genre.name)),
+        appBar: PlatformAppBar(title: context.discoverTranslation.event_picker.title(widget.genre.name)),
         body: BlocConsumer<EventPickerBloc, EventPickerState>(
           listener: (_, state) {
             state.mapOrNull(error: (_) => _showError(context));

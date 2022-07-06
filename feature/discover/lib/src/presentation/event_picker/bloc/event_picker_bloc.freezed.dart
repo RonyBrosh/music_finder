@@ -21,7 +21,6 @@ mixin _$EventPickerEvent {
     required TResult Function() load,
     required TResult Function(Event event) openWeblink,
     required TResult Function(Event event) play,
-    required TResult Function() close,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +28,6 @@ mixin _$EventPickerEvent {
     TResult Function()? load,
     TResult Function(Event event)? openWeblink,
     TResult Function(Event event)? play,
-    TResult Function()? close,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +35,6 @@ mixin _$EventPickerEvent {
     TResult Function()? load,
     TResult Function(Event event)? openWeblink,
     TResult Function(Event event)? play,
-    TResult Function()? close,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -46,7 +43,6 @@ mixin _$EventPickerEvent {
     required TResult Function(_Load value) load,
     required TResult Function(_OpenWeblink value) openWeblink,
     required TResult Function(_Play value) play,
-    required TResult Function(_Close value) close,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,7 +50,6 @@ mixin _$EventPickerEvent {
     TResult Function(_Load value)? load,
     TResult Function(_OpenWeblink value)? openWeblink,
     TResult Function(_Play value)? play,
-    TResult Function(_Close value)? close,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,7 +57,6 @@ mixin _$EventPickerEvent {
     TResult Function(_Load value)? load,
     TResult Function(_OpenWeblink value)? openWeblink,
     TResult Function(_Play value)? play,
-    TResult Function(_Close value)? close,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,7 +120,6 @@ class _$_Load implements _Load {
     required TResult Function() load,
     required TResult Function(Event event) openWeblink,
     required TResult Function(Event event) play,
-    required TResult Function() close,
   }) {
     return load();
   }
@@ -137,7 +130,6 @@ class _$_Load implements _Load {
     TResult Function()? load,
     TResult Function(Event event)? openWeblink,
     TResult Function(Event event)? play,
-    TResult Function()? close,
   }) {
     return load?.call();
   }
@@ -148,7 +140,6 @@ class _$_Load implements _Load {
     TResult Function()? load,
     TResult Function(Event event)? openWeblink,
     TResult Function(Event event)? play,
-    TResult Function()? close,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -163,7 +154,6 @@ class _$_Load implements _Load {
     required TResult Function(_Load value) load,
     required TResult Function(_OpenWeblink value) openWeblink,
     required TResult Function(_Play value) play,
-    required TResult Function(_Close value) close,
   }) {
     return load(this);
   }
@@ -174,7 +164,6 @@ class _$_Load implements _Load {
     TResult Function(_Load value)? load,
     TResult Function(_OpenWeblink value)? openWeblink,
     TResult Function(_Play value)? play,
-    TResult Function(_Close value)? close,
   }) {
     return load?.call(this);
   }
@@ -185,7 +174,6 @@ class _$_Load implements _Load {
     TResult Function(_Load value)? load,
     TResult Function(_OpenWeblink value)? openWeblink,
     TResult Function(_Play value)? play,
-    TResult Function(_Close value)? close,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -276,7 +264,6 @@ class _$_OpenWeblink implements _OpenWeblink {
     required TResult Function() load,
     required TResult Function(Event event) openWeblink,
     required TResult Function(Event event) play,
-    required TResult Function() close,
   }) {
     return openWeblink(event);
   }
@@ -287,7 +274,6 @@ class _$_OpenWeblink implements _OpenWeblink {
     TResult Function()? load,
     TResult Function(Event event)? openWeblink,
     TResult Function(Event event)? play,
-    TResult Function()? close,
   }) {
     return openWeblink?.call(event);
   }
@@ -298,7 +284,6 @@ class _$_OpenWeblink implements _OpenWeblink {
     TResult Function()? load,
     TResult Function(Event event)? openWeblink,
     TResult Function(Event event)? play,
-    TResult Function()? close,
     required TResult orElse(),
   }) {
     if (openWeblink != null) {
@@ -313,7 +298,6 @@ class _$_OpenWeblink implements _OpenWeblink {
     required TResult Function(_Load value) load,
     required TResult Function(_OpenWeblink value) openWeblink,
     required TResult Function(_Play value) play,
-    required TResult Function(_Close value) close,
   }) {
     return openWeblink(this);
   }
@@ -324,7 +308,6 @@ class _$_OpenWeblink implements _OpenWeblink {
     TResult Function(_Load value)? load,
     TResult Function(_OpenWeblink value)? openWeblink,
     TResult Function(_Play value)? play,
-    TResult Function(_Close value)? close,
   }) {
     return openWeblink?.call(this);
   }
@@ -335,7 +318,6 @@ class _$_OpenWeblink implements _OpenWeblink {
     TResult Function(_Load value)? load,
     TResult Function(_OpenWeblink value)? openWeblink,
     TResult Function(_Play value)? play,
-    TResult Function(_Close value)? close,
     required TResult orElse(),
   }) {
     if (openWeblink != null) {
@@ -428,7 +410,6 @@ class _$_Play implements _Play {
     required TResult Function() load,
     required TResult Function(Event event) openWeblink,
     required TResult Function(Event event) play,
-    required TResult Function() close,
   }) {
     return play(event);
   }
@@ -439,7 +420,6 @@ class _$_Play implements _Play {
     TResult Function()? load,
     TResult Function(Event event)? openWeblink,
     TResult Function(Event event)? play,
-    TResult Function()? close,
   }) {
     return play?.call(event);
   }
@@ -450,7 +430,6 @@ class _$_Play implements _Play {
     TResult Function()? load,
     TResult Function(Event event)? openWeblink,
     TResult Function(Event event)? play,
-    TResult Function()? close,
     required TResult orElse(),
   }) {
     if (play != null) {
@@ -465,7 +444,6 @@ class _$_Play implements _Play {
     required TResult Function(_Load value) load,
     required TResult Function(_OpenWeblink value) openWeblink,
     required TResult Function(_Play value) play,
-    required TResult Function(_Close value) close,
   }) {
     return play(this);
   }
@@ -476,7 +454,6 @@ class _$_Play implements _Play {
     TResult Function(_Load value)? load,
     TResult Function(_OpenWeblink value)? openWeblink,
     TResult Function(_Play value)? play,
-    TResult Function(_Close value)? close,
   }) {
     return play?.call(this);
   }
@@ -487,7 +464,6 @@ class _$_Play implements _Play {
     TResult Function(_Load value)? load,
     TResult Function(_OpenWeblink value)? openWeblink,
     TResult Function(_Play value)? play,
-    TResult Function(_Close value)? close,
     required TResult orElse(),
   }) {
     if (play != null) {
@@ -503,120 +479,6 @@ abstract class _Play implements EventPickerEvent {
   Event get event => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_PlayCopyWith<_$_Play> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_CloseCopyWith<$Res> {
-  factory _$$_CloseCopyWith(_$_Close value, $Res Function(_$_Close) then) =
-      __$$_CloseCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_CloseCopyWithImpl<$Res> extends _$EventPickerEventCopyWithImpl<$Res>
-    implements _$$_CloseCopyWith<$Res> {
-  __$$_CloseCopyWithImpl(_$_Close _value, $Res Function(_$_Close) _then)
-      : super(_value, (v) => _then(v as _$_Close));
-
-  @override
-  _$_Close get _value => super._value as _$_Close;
-}
-
-/// @nodoc
-
-class _$_Close implements _Close {
-  const _$_Close();
-
-  @override
-  String toString() {
-    return 'EventPickerEvent.close()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Close);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() load,
-    required TResult Function(Event event) openWeblink,
-    required TResult Function(Event event) play,
-    required TResult Function() close,
-  }) {
-    return close();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? load,
-    TResult Function(Event event)? openWeblink,
-    TResult Function(Event event)? play,
-    TResult Function()? close,
-  }) {
-    return close?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? load,
-    TResult Function(Event event)? openWeblink,
-    TResult Function(Event event)? play,
-    TResult Function()? close,
-    required TResult orElse(),
-  }) {
-    if (close != null) {
-      return close();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Load value) load,
-    required TResult Function(_OpenWeblink value) openWeblink,
-    required TResult Function(_Play value) play,
-    required TResult Function(_Close value) close,
-  }) {
-    return close(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Load value)? load,
-    TResult Function(_OpenWeblink value)? openWeblink,
-    TResult Function(_Play value)? play,
-    TResult Function(_Close value)? close,
-  }) {
-    return close?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Load value)? load,
-    TResult Function(_OpenWeblink value)? openWeblink,
-    TResult Function(_Play value)? play,
-    TResult Function(_Close value)? close,
-    required TResult orElse(),
-  }) {
-    if (close != null) {
-      return close(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Close implements EventPickerEvent {
-  const factory _Close() = _$_Close;
 }
 
 /// @nodoc

@@ -12,8 +12,8 @@ abstract class TicketMasterModule {
   @Named(ticketMasterDioTIParameterName)
   Dio get provideTicketMasterDio {
     final dio = Dio(BaseOptions(baseUrl: 'https://app.ticketmaster.com'));
-    dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
     dio.interceptors.add(TicketMasterInterceptor());
+    dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
     dio.httpClientAdapter = getDioHttpAdapter();
     return dio;
   }

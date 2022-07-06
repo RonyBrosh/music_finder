@@ -50,5 +50,11 @@ Object _readImage(Map json, String key) {
   final images = json['images'] as List;
   final sizes = images.map((image) => image['width'] * image['height']).toList(growable: false)..sort();
   final middleIndex = sizes.length ~/ 2;
-  return images[middleIndex]['url'];
+  for (int index = middleIndex; index < sizes.length; index++) {
+    if (sizes[index] >= 699392) {
+      return images[index]['url'];
+    }
+  }
+
+  return images[sizes.length - 1]['url'];
 }
