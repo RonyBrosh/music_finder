@@ -48,16 +48,20 @@ class _EventPickerPageState extends State<EventPickerPage> {
                 } else {
                   return Padding(
                     padding: const EdgeInsets.all(Space.small),
-                    child: MasonryGridView.count(
-                      crossAxisCount: kIsWeb ? 4 : 1,
-                      mainAxisSpacing: Space.tiny,
-                      crossAxisSpacing: Space.tiny,
-                      itemCount: content.length,
-                      itemBuilder: (context, index) {
-                        return EventCard(
-                          item: content[index],
-                          onWeblinkTap: (event) => _onOpenWeblink(context, event),
-                          onPlayTap: (event) => context.read<EventPickerBloc>().add(EventPickerEvent.play(event)),
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        return MasonryGridView.count(
+                          crossAxisCount: constraints.maxWidth >= ScreenInfo.largeScreen ? 4 : 1,
+                          mainAxisSpacing: Space.tiny,
+                          crossAxisSpacing: Space.tiny,
+                          itemCount: content.length,
+                          itemBuilder: (context, index) {
+                            return EventCard(
+                              item: content[index],
+                              onWeblinkTap: (event) => _onOpenWeblink(context, event),
+                              onPlayTap: (event) => context.read<EventPickerBloc>().add(EventPickerEvent.play(event)),
+                            );
+                          },
                         );
                       },
                     ),

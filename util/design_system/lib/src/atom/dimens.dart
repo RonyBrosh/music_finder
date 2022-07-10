@@ -6,3 +6,7 @@ class Space {
   static const large = 12.0;
   static const xlarge = 16.0;
 }
+
+class ScreenInfo{
+  static const largeScreen = 720;
+}
